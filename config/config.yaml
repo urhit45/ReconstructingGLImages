@@ -1,0 +1,72 @@
+## Observation settings
+exposure_time: 300  # Exposure time in seconds
+seeing: 0.6  # FWHM of the PSF in arcseconds
+zeropoint: 27.0  # Zeropoint magnitude of the observation
+
+data_path: '../data/COSMOS_23.5_training_sample/'
+
+
+## Image settings
+output_size:
+  width: 1280  # Output image width
+  height: 720  # Output image height
+pixel_scale: 0.2  # Pixel scale in arcseconds
+
+## Source settings
+source:
+  type: sersic  # Source type
+  sersic_index: 3  # Sersic index of the source
+  magnitude:
+    distribution: uniform  # Magnitude is sampled from a uniform distribution
+    min: 21.0  # Minimum magnitude
+    max: 23.0  # Maximum magnitude
+  effective_radius:
+    distribution: normal  # Effective radius is sampled from a normal distribution
+    mean: 0.1  # Mean effective radius in arcseconds
+    std: 0.02  # Standard deviation of effective radius in arcseconds
+  ellipticity:
+    e1:
+      distribution: normal  # First ellipticity component is sampled from a normal distribution
+      mean: 0.2  # Mean first ellipticity component
+      std: 0.05  # Standard deviation of first ellipticity component
+    e2:
+      distribution: normal  # Second ellipticity component is sampled from a normal distribution
+      mean: 0.1  # Mean second ellipticity component
+      std: 0.05  # Standard deviation of second ellipticity component
+
+## Lens settings
+lens:
+  redshift:
+    distribution: uniform  # Redshift is sampled from a uniform distribution
+    min: 0.2  # Minimum redshift
+    max: 0.8  # Maximum redshift
+  type: power-law  # Lens mass model type
+  einstein_radius:
+    distribution: normal  # Einstein radius is sampled from a normal distribution
+    mean: 0.5  # Mean Einstein radius in arcseconds
+    std: 0.05  # Standard deviation of Einstein radius in arcseconds
+  slope:
+    distribution: normal  # Power-law slope is sampled from a normal distribution
+    mean: 1.5  # Mean power-law slope
+    std: 0.1  # Standard deviation of power-law slope
+  axis_ratio:
+    distribution: normal  # Axis ratio is sampled from a normal distribution
+    mean: 0.8  # Mean axis ratio
+    std: 0.05  # Standard deviation of axis ratio
+  position_angle:
+    distribution: uniform  # Position angle is sampled from a uniform distribution
+    min: 0.0  # Minimum position angle in degrees
+    max: 180.0  # Maximum position angle in degrees
+
+## Lensing settings
+lensing:
+  type: point-mass  # Lensing type
+  redshift:
+    distribution: uniform  # Redshift is sampled from a uniform distribution
+    min: 0.0  # Minimum redshift
+    max: 0.5  # Maximum redshift
+  position:
+    x:
+      distribution: normal  # X position is sampled from a normal distribution
+      mean: 0.2  # Mean X position in arcseconds
+     
